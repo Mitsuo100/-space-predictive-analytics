@@ -12,31 +12,30 @@ export default function DashboardCard({
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
-
-      <Text style={styles.value}>
-        {value}
-      </Text>
+      <Text style={styles.value}>{value}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#1D2951",
+    backgroundColor: "#1A237E",
+    borderRadius: 16,
     padding: 20,
-    borderRadius: 12,
     marginBottom: 15,
+    borderWidth: 1,
+    borderColor: "#3949AB",
   },
 
   title: {
-    color: "#ccc",
-    fontSize: 16,
+    color: "#B3E5FC",
+    fontSize: 15,
   },
 
   value: {
-    color: "#fff",
-    fontSize: 26,
+    color: "#FFFFFF",
+    fontSize: 28,
     fontWeight: "bold",
-    marginTop: 10,
+    marginTop: 8,
   },
 });

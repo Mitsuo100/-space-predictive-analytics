@@ -11,7 +11,7 @@ export default function Layout() {
           },
           headerTintColor: "#fff",
           contentStyle: {
-            backgroundColor: "#121A35",
+            backgroundColor: "#070B1A",
           },
         }}
       />
