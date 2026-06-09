@@ -1,56 +1,213 @@
-# Welcome to your Expo app 👋
+````md
+# Space Predictive Analytics
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### Global Solution 2026.1 — Cross-Platform Application Development | FIAP
 
-## Get started
+---
 
-1. Install dependencies
+## Descrição
 
-   ```bash
-   npm install
-   ```
+O Space Predictive Analytics é uma aplicação mobile desenvolvida para monitoramento inteligente de operações espaciais simuladas. A plataforma realiza o acompanhamento de indicadores críticos como temperatura, energia, comunicação e estabilidade orbital, gerando alertas automáticos sempre que valores ultrapassam limites configurados. A solução auxilia a tomada de decisão em ambientes críticos por meio da centralização e interpretação dos dados operacionais da missão.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Equipe
 
-In the output, you'll find options to open the app in a
+| Nome | RM |
+|--------|--------|
+| Thiago Ono Sakai | RM563448 |
+| Pedro Mitsuo Risardi Nisiaymamoto | RM561710 |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**Turma:** 2CCPO
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Telas do Aplicativo
 
-When you're ready, run:
+### Home — Dashboard Principal
+
+![Home](./assets/screenshots/home.png)
+
+Visão geral da missão espacial com monitoramento dos principais indicadores de telemetria, incluindo temperatura, energia, qualidade do sinal e estabilidade orbital.
+
+---
+
+### Dashboard de Sensores
+
+![Sensores](./assets/screenshots/sensores.png)
+
+Monitoramento dos sensores da missão com atualização periódica dos dados simulados de temperatura e estabilidade operacional.
+
+---
+
+### Dashboard de Energia
+
+![Energia](./assets/screenshots/energia.png)
+
+Visualização dos indicadores de energia da missão, incluindo consumo atual e energia disponível para operação.
+
+---
+
+### Dashboard de Comunicação
+
+![Comunicacao](./assets/screenshots/comunicacao.png)
+
+Monitoramento da qualidade do sinal de comunicação entre a missão e a central de controle, identificando possíveis perdas ou degradações do link.
+
+---
+
+### Alertas
+
+![Alertas](./assets/screenshots/alertas.png)
+
+Tela responsável pela exibição dos alertas gerados automaticamente quando algum indicador atinge níveis críticos definidos pelo usuário.
+
+---
+
+### Configurações / Formulário
+
+![Configuracoes](./assets/screenshots/configuracoes.png)
+
+Formulário para configuração dos limites de alerta, com validação dos dados informados e persistência local utilizando AsyncStorage.
+
+---
+
+## Funcionalidades
+
+- [x] Dashboard principal com indicadores em tempo real (simulado)
+- [x] Dashboard de sensores
+- [x] Dashboard de energia
+- [x] Dashboard de comunicação
+- [x] Sistema de alertas automáticos baseado em limiares críticos
+- [x] Persistência de configurações utilizando AsyncStorage
+- [x] Navegação utilizando Expo Router
+- [x] Context API para gerenciamento global do estado da missão
+- [x] Formulário com validação de dados
+- [x] Atualização periódica dos dados simulados
+- [x] Componentes reutilizáveis
+- [ ] Integração com API externa (bônus)
+- [ ] Integração com IA Generativa (bônus)
+
+---
+
+## Tecnologias Utilizadas
+
+- React Native
+- Expo
+- Expo Router
+- TypeScript
+- Context API
+- AsyncStorage
+- React Hooks (useState, useEffect, useContext)
+- Expo Go
+
+---
+
+## Estrutura do Projeto
+
+```text
+src/
+│
+├── app/
+│   ├── _layout.tsx
+│   ├── index.tsx
+│   ├── alerts.tsx
+│   ├── mission.tsx
+│   └── settings.tsx
+│
+├── components/
+│   ├── AlertCard.tsx
+│   └── DashboardCard.tsx
+│
+├── context/
+│   └── MissionContext.tsx
+│
+└── services/
+    └── simulator.ts
+````
+
+---
+
+## Como Executar
+
+### Pré-requisitos
+
+* Node.js instalado
+* NPM instalado
+* Expo Go instalado no dispositivo móvel ou emulador Android
+* Android Studio (opcional)
+
+### Instalação
+
+Clone o repositório:
 
 ```bash
-npm run reset-project
+git clone https://github.com/Mitsuo100/-space-predictive-analytics.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Acesse a pasta do projeto:
 
-### Other setup steps
+```bash
+cd -space-predictive-analytics
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Instale as dependências:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Execute o projeto:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Para abrir no Android:
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start --android
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Ou escaneie o QR Code utilizando o Expo Go.
+
+---
+
+## Sistema de Alertas
+
+A aplicação monitora continuamente os seguintes indicadores:
+
+* Temperatura
+* Energia
+* Qualidade do sinal
+* Estabilidade orbital
+
+Quando um valor ultrapassa os limites configurados, um alerta é gerado automaticamente e exibido na tela de monitoramento.
+
+---
+
+## Persistência de Dados
+
+As configurações dos limiares de alerta são armazenadas localmente utilizando AsyncStorage, permitindo que as preferências do usuário permaneçam salvas mesmo após o fechamento da aplicação.
+
+---
+
+## Repositório
+
+GitHub:
+
+https://github.com/Mitsuo100/-space-predictive-analytics
+
+---
+
+## Projeto Acadêmico
+
+Projeto desenvolvido para a disciplina **Cross-Platform Application Development** da FIAP como parte da avaliação **Global Solution 2026.1**.
+
+Desenvolvido por:
+
+* Thiago Ono Sakai
+* Pedro Mitsuo Risardi Nisiaymamoto
+
+```
+```
