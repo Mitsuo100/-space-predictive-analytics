@@ -200,6 +200,14 @@ https://github.com/Mitsuo100/-space-predictive-analytics
 
 ---
 
+## Vídeo de Demonstração
+
+Vídeo demonstração:
+
+[![Assista ao vídeo](./assets/screenshots/thumb.png)](https://youtu.be/3TaZdhwiWnc)
+
+---
+
 ## Projeto Acadêmico
 
 Projeto desenvolvido para a disciplina **Cross-Platform Application Development** da FIAP como parte da avaliação **Global Solution 2026.1**.
