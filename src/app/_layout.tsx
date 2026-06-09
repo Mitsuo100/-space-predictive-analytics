@@ -1,15 +1,20 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { Stack } from "expo-router";
+import { MissionProvider } from "../context/MissionContext";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function Layout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <MissionProvider>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#0B1026",
+          },
+          headerTintColor: "#fff",
+          contentStyle: {
+            backgroundColor: "#121A35",
+          },
+        }}
+      />
+    </MissionProvider>
   );
 }
