@@ -1,4 +1,4 @@
-````md
+
 # Space Predictive Analytics
 
 ### Global Solution 2026.1 — Cross-Platform Application Development | FIAP
