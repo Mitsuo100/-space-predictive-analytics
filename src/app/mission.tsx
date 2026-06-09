@@ -14,7 +14,7 @@ export default function Mission() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
+      <Text style={styles.mainTitle}>
         Resumo da Missão
       </Text>
 
@@ -22,20 +22,43 @@ export default function Mission() {
         Status Atual: {status}
       </Text>
 
+      <Text style={styles.sectionTitle}>
+        Dashboard de Energia
+      </Text>
+
+      <Text style={styles.info}>
+        Energia restante: {telemetry.energy}%
+      </Text>
+
+      <Text style={styles.info}>
+        Consumo: {100 - telemetry.energy}%
+      </Text>
+
+      <Text style={styles.info}>
+        Estabilidade orbital: {telemetry.stability}%
+      </Text>
+
+      <Text style={styles.sectionTitle}>
+        Dashboard de Comunicação
+      </Text>
+
+      <Text style={styles.info}>
+        Qualidade do sinal: {telemetry.signal}%
+      </Text>
+
+      <Text style={styles.info}>
+        Status:
+        {telemetry.signal < 30
+          ? " CRÍTICO"
+          : " OPERACIONAL"}
+      </Text>
+
+      <Text style={styles.sectionTitle}>
+        Dashboard de Sensores
+      </Text>
+
       <Text style={styles.info}>
         Temperatura: {telemetry.temperature}°C
-      </Text>
-
-      <Text style={styles.info}>
-        Energia: {telemetry.energy}%
-      </Text>
-
-      <Text style={styles.info}>
-        Sinal: {telemetry.signal}%
-      </Text>
-
-      <Text style={styles.info}>
-        Estabilidade: {telemetry.stability}%
       </Text>
     </View>
   );
@@ -46,16 +69,24 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  title: {
+  mainTitle: {
     color: "white",
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
   },
 
+  sectionTitle: {
+    color: "#4FC3F7",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 20,
+    marginBottom: 10,
+  },
+
   info: {
     color: "white",
     fontSize: 18,
-    marginBottom: 10,
+    marginBottom: 8,
   },
 });

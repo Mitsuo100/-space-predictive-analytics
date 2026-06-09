@@ -1,6 +1,11 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
-import { useMission } from "../context/MissionContext";
+import {
+  ScrollView,
+  Text,
+  StyleSheet,
+} from "react-native";
+
 import AlertCard from "../components/AlertCard";
+import { useMission } from "../context/MissionContext";
 
 export default function Alerts() {
   const { alerts } = useMission();
@@ -8,7 +13,11 @@ export default function Alerts() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>
-        Alertas da Missão
+        Dashboard de Alertas
+      </Text>
+
+      <Text style={styles.counter}>
+        Total de Alertas: {alerts.length}
       </Text>
 
       {alerts.length === 0 ? (
@@ -35,8 +44,14 @@ const styles = StyleSheet.create({
   title: {
     color: "white",
     fontSize: 24,
-    marginBottom: 20,
     fontWeight: "bold",
+    marginBottom: 15,
+  },
+
+  counter: {
+    color: "#4FC3F7",
+    fontSize: 18,
+    marginBottom: 15,
   },
 
   normal: {

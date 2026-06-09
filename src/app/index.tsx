@@ -1,13 +1,23 @@
-import { View, ScrollView, StyleSheet, Button } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Button,
+  Text,
+} from "react-native";
+
 import DashboardCard from "../components/DashboardCard";
 import { useMission } from "../context/MissionContext";
 import { router } from "expo-router";
 
 export default function Home() {
-  const { telemetry } = useMission();
+  const { telemetry, alerts } = useMission();
 
   return (
     <ScrollView style={styles.container}>
+      <Text style={styles.title}>
+        Space Predictive Analytics
+      </Text>
+
       <DashboardCard
         title="Temperatura"
         value={`${telemetry.temperature}°C`}
@@ -28,19 +38,23 @@ export default function Home() {
         value={`${telemetry.stability}%`}
       />
 
+      <Text style={styles.alertText}>
+        Alertas Ativos: {alerts.length}
+      </Text>
+
       <Button
         title="Ver Alertas"
         onPress={() => router.push("/alerts")}
       />
 
       <Button
-        title="Configurações"
-        onPress={() => router.push("/settings")}
+        title="Missão"
+        onPress={() => router.push("/mission")}
       />
 
       <Button
-        title="Missão"
-        onPress={() => router.push("/mission")}
+        title="Configurações"
+        onPress={() => router.push("/settings")}
       />
     </ScrollView>
   );
@@ -49,5 +63,18 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+  },
+
+  title: {
+    color: "white",
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+
+  alertText: {
+    color: "white",
+    fontSize: 18,
+    marginVertical: 20,
   },
 });
